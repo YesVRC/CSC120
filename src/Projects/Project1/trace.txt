@@ -1,0 +1,5 @@
+Enter the employee's name: Neil Peart
+Enter the employee's pay rate: $21.12
+Enter the employee's hours worked: 16
+Employee: Peart, Neil
+$21.12 per hour x 16 hours = $337.92

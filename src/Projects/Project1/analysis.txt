@@ -1,0 +1,6 @@
+1.  It took me 20 minutes to complete this project.
+2.  I did not receive any help on this project.
+3.  The most difficult part was figuring out which line went where;
+4.  I first made sure the imports, class declaration, and main method line were in the right order and closed the braces as needed.
+    Then I placed all the variables at the top of the method. I then ordered the assignments/scans after their respective prompts/println.
+    Finally, I ordered the math operation and the outputs in the order they were on the PDF.
