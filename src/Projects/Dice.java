@@ -1,6 +1,3 @@
-/**
- * 
- */
 package Lab5;
 import java.util.Random;
 
@@ -21,7 +18,6 @@ public class Dice {
 	 * @return Instance of Dice
 	 */
 	public Dice() {
-		roll();
 	}
 	
 	/**
@@ -45,9 +41,33 @@ public class Dice {
 	 */
 	public void roll() {
 		Random rand = new Random();
-		die1 = rand.nextInt(1, 7);
-		die2 = rand.nextInt(1, 7);
-		die3 = rand.nextInt(1, 7);
+		die1 = rand.nextInt(6) + 1;
+		die2 = rand.nextInt(6) + 1;
+		die3 = rand.nextInt(6) + 1;
+	}
+	
+	/**
+	 * <h1> rollOneDie </h1>
+	 * <p> Rolls one Die</p>
+	 *	@param die Which die to roll
+	 */
+	public void rollOneDie(int die) {
+		Random rand = new Random();
+		if (die == 1) {
+			die1 = rand.nextInt(6) + 1;
+		}
+		else if (die == 2) {
+			die2 = rand.nextInt(6) + 1;
+		}
+		else if (die == 3) {
+			die3 = rand.nextInt(6) + 1;
+		}
+		else {
+			System.out.println("Invalid die number... try again.");
+		}
+		
+		
+		
 	}
 	
 	/** 
@@ -78,30 +98,33 @@ public class Dice {
 	}
 	
 	/**
-	 * <h1> getTotal </h1>
-	 * <p> Gets total of die values </p>
-	 * @return Total of dice as an integer
+	 * calcTotalRoll
+	 * This method will calculate the sum of the values rolled
+	 * on the three dice
+	 * @return the sum of the three dice
 	 */
-	public int getTotal() {
+	public int calcTotalRoll() {
 		return die1 + die2 + die3;
 	}
 	
 	/**
-	 * <h1> getMax</h1>
-	 * <p> Gets Max value of die values </p>
-	 * @return Max die value as an integer
+	 * threeOfAKind method
+	 * this method will determine if all three of the dice
+	 * have the same value
+	 * @return true if they have the same value, false otherwise
 	 */
-	public int getMax() {
-		return Math.max(Math.max(die1, die2),die3);
+	public boolean threeOfAKind() {
+		return die1 == die2 && die2 == die3;
 	}
 	
 	/**
-	 * <h1> getMin</h1>
-	 * <p> Gets Min value of die values </p>
-	 * @return Min die value as an integer
+	 * findHighestDie
+	 * This method will determine the highest value on the
+	 * three dice
+	 * @return the highest value
 	 */
-	public int getMin() {
-		return Math.min(Math.min(die1, die2),die3);
+	public int findHighestDie() {
+		return Math.max(Math.max(die1, die2),die3);
 	}
 	
 	/**
@@ -111,16 +134,6 @@ public class Dice {
 	 */
 	public String toString() {
 		return String.format("%d %d %d", die1, die2, die3);
-	}
-	
-	/**
-	 * <h1> toArray </h1>
-	 * <p> Gets the dice as an array </p>
-	 * @return An array of the values
-	 */
-	public int[] toArray() {
-		int[] dice = {die1, die2, die3};
-		return dice;
 	}
 
 }

@@ -1,6 +1,4 @@
 package Lab5;
-
-
 /**
  * <h1> Lab 5 </h1>
  * 
@@ -29,6 +27,30 @@ public class Lab5App {
 		System.out.println("Value of Die 3: " + dice.getDie3());
 		System.out.println();
 		
+		// Roll total
+		System.out.printf("The roll total is %d \n", dice.calcTotalRoll());
+		System.out.println();
+		
+		// Three of a kind
+		if(dice.threeOfAKind()) {
+			System.out.println("Three of a kind.");
+		}
+		else {
+			System.out.println("Not three of a kind.");
+		}
+		System.out.println();
+		
+		// Highest Value
+		System.out.printf("The highest value of the three dice is %d \n", dice.findHighestDie());
+		System.out.println();
+		
+		// Rolling only one
+		dice.rollOneDie(1);
+		System.out.println("Rolling die 1 only: " + dice.toString());
+		dice.rollOneDie(2);
+		System.out.println("Rolling die 2 only: " + dice.toString());
+		dice.rollOneDie(3);
+		System.out.println("Rolling die 3 only: " + dice.toString());
 	}
 
 }
