@@ -1,0 +1,62 @@
+/**
+ * JavaDoc comments here
+ */
+
+public class Lab6App {
+   public static void main( String args[] ) {
+      // Testing default constructor
+      System.out.println("Testing default constructor:");
+      PhoneBookEntry defaultEntry = new PhoneBookEntry(); // default constructor instance
+      System.out.println(defaultEntry.toString());
+      
+      System.out.println("");
+      
+      // Testing parameterized constructor
+      PhoneBookEntry marySmith = new PhoneBookEntry("Mary", "Smith", "631-123-4567", "03/15", 'F'); // instance for Mary Smith
+      System.out.println("Testing parameterized constructor:");
+      System.out.println(marySmith.toString());
+      
+      System.out.println("");
+
+      // Testing accessor methods
+      System.out.println("Testing accessor methods:");
+      System.out.println("First name: " + marySmith.getFirstName());
+      System.out.println("Last name: " + marySmith.getLastName());
+      System.out.println("Phone number: " + marySmith.getPhoneNumber());
+      System.out.println("Date of Birth: " + marySmith.getBirthDate());
+      System.out.println("Relationship: " + marySmith.getRelationship());
+      
+      System.out.println("");
+
+      // Testing mutator methods
+      System.out.println("Testing mutator method for the last name on default object:");
+      defaultEntry.setLastName("Doe");
+      
+      System.out.println(defaultEntry.toString());
+      
+      System.out.println("");
+      
+      System.out.println("Testing mutator method for the phone number on default object:");
+      defaultEntry.setPhoneNumber("516-123-4567");
+      
+      System.out.println(defaultEntry.toString());
+      
+      System.out.println("");
+      
+      // Testing equals method
+      System.out.println("Testing equals method:");
+      
+      PhoneBookEntry marySmith2 = new PhoneBookEntry("Mary", "Smith", "516-572-7383", "04/10", 'B'); // Another mary smith for testing
+      PhoneBookEntry johnSmith = new PhoneBookEntry("John", "Smith", "516-572-7700", "01/20", 'M'); // John smith for testing
+      
+      System.out.println(marySmith.toString());
+      System.out.println(marySmith.equals(marySmith2)? "IS THE SAME PERSON AS" : "IS NOT THE SAME PERSON AS");
+      System.out.println(marySmith2.toString());
+      
+      System.out.println("");
+      
+      System.out.println(marySmith.toString());
+      System.out.println(marySmith.equals(johnSmith)? "IS THE SAME PERSON AS" : "IS NOT THE SAME PERSON AS");
+      System.out.println(johnSmith.toString());
+   }
+}

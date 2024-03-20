@@ -1,0 +1,128 @@
+/**
+ * Phone Book Entry Class
+ * Holds information about a person and compare against eachother
+ * @author Chris O'Hea <N00908416>
+ */
+
+public class PhoneBookEntry {
+   String firstName; // First Name
+   String lastName; // Last Name
+   String phoneNumber; // Phone number as xxx-xxx-xxxx
+   String birthDate; // Date of birth as mm/dd
+   char relationship; // Relationship to person || F - friend || M - family || B - business associate
+   
+   
+   /**
+    * Paremeterized Constructor
+    * @param first First name as a String
+    * @param last Last name as a String
+    * @param number Phone Number as a String xxx-xxx-xxxx
+    * @param date Birth date as mm/dd
+    * @param relation Relationship to person || F - friend || M - family || B - business associate
+    *  
+    **/
+   PhoneBookEntry(String first, String last, String number, String date, char relation){
+      firstName = first;
+      lastName = last;
+      phoneNumber = number;
+      birthDate = date;
+      relationship = relation;
+   }
+   
+   /**
+    * Default Constructor
+    **/
+   PhoneBookEntry(){
+      this("None", "None", "516-555-5555", "01/01", 'X');
+   }
+   /**
+    * ToString method
+    * returns a string to represent the values
+    * 
+    **/
+   public String toString(){
+      String relation;
+      switch(relationship){
+      case 'F':
+         relation = "Friend";
+         break;
+      case 'M':
+         relation = "Family Member";
+         break;
+      case 'B':
+         relation = "Business Associate";
+         break;
+      default: 
+         relation = "Not Specified";
+         break;
+      }
+      // LastName, FirstName, PhoneNumber, BirthDate, Relationship
+      return String.format("%s, %s\n%s\n%s\n%s", lastName, firstName, phoneNumber, birthDate, relation);  
+   }
+   
+   /**
+    * getFirstName
+    * @return first name
+    **/
+   public String getFirstName(){
+      return firstName;
+   }
+   
+   /**
+    * getLastName
+    * @return last name
+    **/
+   public String getLastName(){
+      return lastName;
+   }
+   
+   /**
+    * getPhoneNumber
+    * @return phone Number xxx-xxx-xxxx
+    **/
+   public String getPhoneNumber(){
+      return phoneNumber;
+   }
+   
+   /**
+    * getBirthDate
+    * @return birth date mm/dd
+    **/
+   public String getBirthDate(){
+      return birthDate;
+   }
+   
+   /**
+    * getRelationship
+    * @return relationship
+    **/
+   public char getRelationship(){
+    return relationship;  
+   }
+   
+   /**
+    * Sets a new Last Name 
+    * @param value The value to set to
+    **/
+   public void setLastName(String value){
+      lastName = value;
+   }
+   
+   /**
+    * Sets a new PhoneNumber
+    * @param value The value to set to
+    **/
+   public void setPhoneNumber(String value){
+      phoneNumber = value;
+   }
+   
+   /**
+    * Checks to see if another entry is equal to this
+    * @param other Phone Book Entry of other person
+    * @return true or false based on first and last name match
+    **/
+   public boolean equals(PhoneBookEntry other){
+      return firstName.equals(other.getFirstName()) && lastName.equals(other.getLastName());
+   }
+   
+}
